@@ -9,6 +9,7 @@ const start = async () => {
     if (process.env.MONGO_DB_CONNECTION_STRING == null) {
       throw new Error('Mongo db instance env variable is missing');
     }
+  
     await natsWrapper.natsConnect();
 
     new TicketCreatedListener(natsWrapper.client).listen();
