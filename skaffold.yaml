@@ -16,4 +16,20 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: vaibhav/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: vaibhav/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
     

@@ -1,19 +1,26 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-metadata: 
+metadata:
   name: ingress-service
   annotations:
     # ngnix.ingress.kubernetes.io/use-regex: "true"
-spec: 
+spec:
   ingressClassName: nginx
   rules:
     - host: ticketing.dev
-      http: 
+      http:
         paths:
-        - path: /api/users/
-          pathType: Prefix
-          backend:
-            service:
-              name: auth-srv
-              port:
-                number: 3000
+          - path: /api/users/
+            pathType: Prefix
+            backend:
+              service:
+                name: auth-srv
+                port:
+                  number: 3000
+          - path: /api/orders/
+            pathType: Prefix
+            backend:
+              service:
+                name: orders-srv
+                port:
+                  number: 3000

@@ -58,8 +58,8 @@ const start = async () => {
     await mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING);
     console.log('connected successfully!');
 
-    app.listen(5000, () => {
-      console.log('Listening on port 5000');
+    app.listen(process.env.PORT, () => {
+      console.log(`Listening on port ${process.env.PORT}`);
     });
   } catch (error) {
     console.error((error as Error)?.message ?? 'Error while connecting db');
