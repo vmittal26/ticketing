@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: vaibhav/auth
+          image: vmittal26/auth
           env:
             - name: MONGO_DB_CONNECTION_STRING
               value: "mongodb://auth-mongo-srv:27017/auth"

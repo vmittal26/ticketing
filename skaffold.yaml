@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: vaibhav/auth
+    - image: vmittal26/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: vaibhav/orders
+    - image: vmittal26/orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: vaibhav/tickets
+    - image: vmittal26/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile

@@ -1,7 +1,6 @@
+import { BadRequestError } from '@coretickets/modules';
 import express, { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { BadRequestError , validateRequest } from '@coretickets/modules';
-import { signupValidator } from '../validators/signUpValidator';
 
 import * as loginService from '../service/loginService';
 

@@ -1,0 +1,2 @@
+# for installing load balancer in aks in azure below command can be used
+helm install nginx-ingress ingress-nginx/ingress-nginx --namespace azure-aks-cluster-namspace --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz
